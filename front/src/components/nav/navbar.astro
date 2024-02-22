@@ -1,0 +1,38 @@
+---
+import NavbarSection from "./navbar-section.astro";
+import NavbarTab from "./navbar-tab.astro";
+import NavbarButton from "./navbar-button.astro";
+import BiList from "../icons/bi-list.astro";
+import HiBell from "../icons/hi-bell.astro";
+
+const tabStyle =
+  "mx-3 py-1 px-2 hover:px-3 rounded-full hover:bg-orange-600 border-2 border-orange-600 hover:font-semibold hover:text-white transition-all";
+
+let isOpen: Boolean = false;
+
+const toggleNavbar = () => {
+  isOpen = !isOpen;
+  console.log(isOpen);
+};
+---
+
+<div
+  class="bg-white rounded-sm p-4 shadow-sm flex justify-between items-center"
+>
+  <NavbarSection>
+    <NavbarTab>MyDashboard</NavbarTab>
+  </NavbarSection>
+
+  <NavbarSection>
+    <NavbarTab className="justify-between items-center hidden md:flex">
+      <a href="#" class="me-3">Mon compte</a>
+      <a href="#" class="mx-3">
+        <HiBell />
+      </a>
+      <div class="bg-slate-500 rounded-full p-5"></div>
+    </NavbarTab>
+    <NavbarButton className="md:hidden" onclick={toggleNavbar}>
+      <BiList />
+    </NavbarButton>
+  </NavbarSection>
+</div>
