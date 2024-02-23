@@ -1,38 +1,40 @@
 ---
 import NavbarSection from "./navbar-section.astro";
 import NavbarTab from "./navbar-tab.astro";
-import NavbarButton from "./navbar-button.astro";
+import NavbarButton from "./navbar-button";
+import NavbarSubmenu from "./navbar-submenu";
+import Wrapper from "../wrapper.astro";
 import BiList from "../icons/bi-list.astro";
-import HiBell from "../icons/hi-bell.astro";
+import HiBell from "../icons/bi-bell.astro";
 
 const tabStyle =
   "mx-3 py-1 px-2 hover:px-3 rounded-full hover:bg-orange-600 border-2 border-orange-600 hover:font-semibold hover:text-white transition-all";
 
-let isOpen: Boolean = false;
-
-const toggleNavbar = () => {
-  isOpen = !isOpen;
-  console.log(isOpen);
-};
 ---
 
-<div
-  class="bg-white rounded-sm p-4 shadow-sm flex justify-between items-center"
->
-  <NavbarSection>
-    <NavbarTab>MyDashboard</NavbarTab>
-  </NavbarSection>
+<div>
+  <div
+    class="bg-white rounded-sm p-4 shadow-sm flex justify-between items-center"
+  >
+    <NavbarSection>
+      <NavbarTab>MyDashboard</NavbarTab>
+    </NavbarSection>
 
-  <NavbarSection>
-    <NavbarTab className="justify-between items-center hidden md:flex">
-      <a href="#" class="me-3">Mon compte</a>
-      <a href="#" class="mx-3">
-        <HiBell />
-      </a>
-      <div class="bg-slate-500 rounded-full p-5"></div>
-    </NavbarTab>
-    <NavbarButton className="md:hidden" onclick={toggleNavbar}>
-      <BiList />
-    </NavbarButton>
-  </NavbarSection>
+    <NavbarSection>
+      <NavbarTab className="justify-between items-center hidden md:flex">
+        <a href="#myaccount" class="me-3">Mon compte</a>
+        <a href="#notifications" class="mx-3">
+          <Wrapper className="h-fit">
+            <HiBell />
+          </Wrapper>
+        </a>
+        <div class="bg-slate-500 rounded-full p-5">
+        </div>
+      </NavbarTab>
+      <NavbarButton client:idle className="md:hidden">
+        <BiList />
+      </NavbarButton>
+    </NavbarSection>
+  </div>
+  <NavbarSubmenu client:media="(max-width: 768px)">SECTION D'ASSAULT</NavbarSubmenu>
 </div>
