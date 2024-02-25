@@ -1,0 +1,20 @@
+@tailwind base;
+
+.ps-submenu, .ps-menu-icon{
+    font-weight: 500;
+    color:  theme('colors.gray.700');
+}
+
+.ps-menu-label:not(.ps-open){
+    font-weight: 400;
+    color:  theme('colors.gray.600');
+}
+
+.ps-menu-button:hover{
+    background-color:  theme('colors.primary.50') !important;
+    transition: all 250ms;
+}
+
+.ps-sidebar-container, .ps-menu-button{
+    background-color: theme('colors.gray.50');
+}

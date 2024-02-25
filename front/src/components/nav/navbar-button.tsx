@@ -1,20 +1,21 @@
 import { type DefaultFrontContainer } from "../../utils";
 import { cn } from "../../utils";
-import { isOpen } from './navbar-state';
+import { sidebarCollasped } from '../../layouts/layout-state';
 import { useStore } from '@nanostores/react';
+import { FaAlignRight } from "react-icons/fa6";
 
 const Button = ({ children, className }: DefaultFrontContainer) => {
 
-  const $isOpen = useStore(isOpen);
+  const $sidebarCollasped = useStore(sidebarCollasped);
 
   return (
     <button
       className={cn(
-        "bg-white rounded-md p-2 border border-slate-600 flex justify-between items-center",
+        "rounded-md p-2 flex justify-between items-center",
         className
       )}
       onClick={() => {
-        isOpen.set(!$isOpen);
+        sidebarCollasped.set(!$sidebarCollasped);
       }}
     >
       {children}

@@ -1,3 +1,7 @@
-html {
-  background-color: #f7f7f7;
+@tailwind base;
+html, body {
+  background-color: theme('colors.gray.200');
+  height: 100%;
+  transition: all;
+  transition-duration: 0.125ms;
 }

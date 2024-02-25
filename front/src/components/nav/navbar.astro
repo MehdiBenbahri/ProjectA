@@ -2,39 +2,31 @@
 import NavbarSection from "./navbar-section.astro";
 import NavbarTab from "./navbar-tab.astro";
 import NavbarButton from "./navbar-button";
-import NavbarSubmenu from "./navbar-submenu";
-import Wrapper from "../wrapper.astro";
-import BiList from "../icons/bi-list.astro";
-import HiBell from "../icons/bi-bell.astro";
+import { FaChartLine, FaAlignJustify  } from "react-icons/fa6";
+import "./navbar.css"
 
 const tabStyle =
   "mx-3 py-1 px-2 hover:px-3 rounded-full hover:bg-orange-600 border-2 border-orange-600 hover:font-semibold hover:text-white transition-all";
 
 ---
 
-<div>
-  <div
-    class="bg-white rounded-sm p-4 shadow-sm flex justify-between items-center"
-  >
-    <NavbarSection>
-      <NavbarTab>MyDashboard</NavbarTab>
-    </NavbarSection>
-
-    <NavbarSection>
-      <NavbarTab className="justify-between items-center hidden md:flex">
-        <a href="#myaccount" class="me-3">Mon compte</a>
-        <a href="#notifications" class="mx-3">
-          <Wrapper className="h-fit">
-            <HiBell />
-          </Wrapper>
-        </a>
-        <div class="bg-slate-500 rounded-full p-5">
-        </div>
-      </NavbarTab>
-      <NavbarButton client:idle className="md:hidden">
-        <BiList />
+<div
+  class="navbar rounded-sm p-4 shadow-sm flex justify-between items-center"
+>
+  <NavbarSection>
+    <NavbarTab className="flex items-center">
+      <NavbarButton client:idle className="ms-1 me-8">
+        <FaAlignJustify />
       </NavbarButton>
-    </NavbarSection>
-  </div>
-  <NavbarSubmenu client:media="(max-width: 768px)">SECTION D'ASSAULT</NavbarSubmenu>
+      <FaChartLine className="me-1" /> 
+      <p class="ms-1">MyDashboard</p>
+    </NavbarTab>
+  </NavbarSection>
+
+  <NavbarSection>
+    <NavbarTab className="justify-between items-center hidden sm:flex">
+      <a href="#myaccount" class="me-3">Mon compte</a>
+    </NavbarTab>
+    
+  </NavbarSection>
 </div>

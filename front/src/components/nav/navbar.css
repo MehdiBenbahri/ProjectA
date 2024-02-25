@@ -1,0 +1,4 @@
+@tailwind base;
+.navbar{
+    background-color: theme('colors.gray.50');
+}
