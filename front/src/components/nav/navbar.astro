@@ -2,21 +2,19 @@
 import NavbarSection from "./navbar-section.astro";
 import NavbarTab from "./navbar-tab.astro";
 import NavbarButton from "./navbar-button";
-import { FaChartLine, FaAlignJustify  } from "react-icons/fa6";
-import "./navbar.css"
-
-const tabStyle =
-  "mx-3 py-1 px-2 hover:px-3 rounded-full hover:bg-orange-600 border-2 border-orange-600 hover:font-semibold hover:text-white transition-all";
-
+import NavBarThemeSwitch from "./navbar-theme-switch";
+import ToggleIcon from "../toggle-icon";
+import { FaChartLine } from "react-icons/fa6";
+import "./navbar.css";
 ---
 
 <div
-  class="navbar rounded-sm p-4 shadow-sm flex justify-between items-center"
+  class="navbar p-4 shadow-sm flex justify-between items-center"
 >
   <NavbarSection>
     <NavbarTab className="flex items-center">
       <NavbarButton client:idle className="ms-1 me-8">
-        <FaAlignJustify />
+        <ToggleIcon client:idle />
       </NavbarButton>
       <FaChartLine className="me-1" /> 
       <p class="ms-1">MyDashboard</p>
@@ -25,7 +23,8 @@ const tabStyle =
 
   <NavbarSection>
     <NavbarTab className="justify-between items-center hidden sm:flex">
-      <a href="#myaccount" class="me-3">Mon compte</a>
+      <NavBarThemeSwitch client:only />
+      <a href="#myaccount" class="mx-3">Mon compte</a>
     </NavbarTab>
     
   </NavbarSection>

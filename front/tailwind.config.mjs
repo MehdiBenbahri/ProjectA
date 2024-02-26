@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -14,10 +14,11 @@ export default {
 			"base-100": "#f5f5f4",
 			"info": "#0e7490",
 			"success": "#65a30d",
-			"warning": "#f59e0b",
-			"error": "#dc2626",
-			gray: colors.gray
+			warning: colors.amber,
+			error: colors.red,
+			panel: colors.gray
 		},
 	},
 	plugins: [],
+	darkMode: 'class'
 }

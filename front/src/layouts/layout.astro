@@ -1,6 +1,18 @@
 ---
 import Navbar from "../components/nav/navbar.astro";
 import Sidebar from "../components/sidebar/sidebar.astro";
+
+/**
+let darkThemeEnabled:boolean = false;
+
+if (Astro.cookies.has('dark-theme-state')){
+  darkThemeEnabled = Astro.cookies.get('dark-theme-state').value === 'true';
+}
+else{
+  Astro.cookies.set('dark-theme-state', 'false');
+}
+darkModeEnable.set(darkThemeEnabled);
+ */
 ---
 
 <main class="h-full">

@@ -1,13 +1,44 @@
 @tailwind base;
 
+.dark .ps-submenu{
+    font-weight: 500;
+    color:  theme('colors.panel.50');
+}
+
+.dark .ps-menu-icon{
+    color:  theme('colors.panel.50');
+}
+
+.dark .ps-menu-label:not(.ps-open){
+    font-weight: 400;
+    color:  theme('colors.panel.50');
+}
+
+.dark .ps-menu-button:hover{
+    background-color:  theme('colors.primary.800') !important;
+    transition: all 250ms;
+}
+
+.dark .ps-sidebar-root{
+    border-color:  theme('colors.panel.700');
+}
+
+.dark .ps-menu-button{
+    background-color: theme('colors.panel.800');
+}
+
+.dark .ps-sidebar-container{
+    background-color: theme('colors.panel.800');
+}
+
 .ps-submenu, .ps-menu-icon{
     font-weight: 500;
-    color:  theme('colors.gray.700');
+    color:  theme('colors.panel.700');
 }
 
 .ps-menu-label:not(.ps-open){
     font-weight: 400;
-    color:  theme('colors.gray.600');
+    color:  theme('colors.panel.600');
 }
 
 .ps-menu-button:hover{
@@ -16,5 +47,5 @@
 }
 
 .ps-sidebar-container, .ps-menu-button{
-    background-color: theme('colors.gray.50');
+    background-color: theme('colors.panel.50');
 }

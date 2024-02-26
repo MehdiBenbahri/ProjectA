@@ -2,7 +2,6 @@ import { type DefaultFrontContainer } from "../../utils";
 import { cn } from "../../utils";
 import { sidebarCollasped } from '../../layouts/layout-state';
 import { useStore } from '@nanostores/react';
-import { FaAlignRight } from "react-icons/fa6";
 
 const Button = ({ children, className }: DefaultFrontContainer) => {
 

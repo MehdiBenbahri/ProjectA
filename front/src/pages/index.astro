@@ -1,10 +1,17 @@
 ---
 import Layout from "../layouts/layout.astro";
 import "../css/index.css";
+
+let theme = "";
+if (Astro.cookies.has('dark-theme-state')){
+  theme = Astro.cookies.get('dark-theme-state').value === "true" ? "dark": "";
+}
+  
+
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class={theme}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
