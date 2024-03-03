@@ -7,9 +7,11 @@ html, body {
 
 body{
   background-color: theme('colors.panel.200');
+  color: theme('colors.panel.900');
 }
 
 .dark body {
   background-color: theme('colors.panel.900');
+  color: theme('colors.panel.200');
 }
 

@@ -1,21 +1,28 @@
 ---
 import Navbar from "../components/nav/navbar.astro";
 import Sidebar from "../components/sidebar/sidebar.astro";
+import "../css/index.css";
 
-/**
-let darkThemeEnabled:boolean = false;
-
+let theme = "";
 if (Astro.cookies.has('dark-theme-state')){
-  darkThemeEnabled = Astro.cookies.get('dark-theme-state').value === 'true';
+  theme = Astro.cookies.get('dark-theme-state').value === "true" ? "dark": "";
 }
-else{
-  Astro.cookies.set('dark-theme-state', 'false');
-}
-darkModeEnable.set(darkThemeEnabled);
- */
----
 
-<main class="h-full">
-  <Navbar />
-  <Sidebar />
-</main>
+---
+<!doctype html>
+<html lang="fr" class={theme}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+  <main class="h-full">
+    <Navbar />
+    <div class="flex  h-full">
+      <Sidebar />
+      <slot />
+    </div>
+  </main>
+</body>
+</html>

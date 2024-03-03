@@ -1,0 +1,40 @@
+@tailwind base;
+
+.table{
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+table, th, td {
+    border: 1px solid theme("colors.panel.500");
+    padding: 0.5rem;
+}
+
+.table-background{
+    background-color: theme("colors.panel.100");
+}
+
+.dark .table-background{
+    background-color: rgba(249,249,249,0.05);
+}
+
+.pagination button {
+    height: 3rem;
+    width: 3rem;
+}
+
+.pagination, button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all;
+    transition-duration: 0.15s;
+}
+
+.pagination button:hover{
+    background-color: theme("colors.primary.500");
+    transition: all;
+    transition-duration: 0.15s;
+}

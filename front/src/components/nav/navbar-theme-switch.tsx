@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Switch from '../../components/switch/switch';
 import { FaMoon, FaSun } from "react-icons/fa6";
 import Cookies from 'universal-cookie';
